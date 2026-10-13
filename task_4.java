@@ -1,6 +1,8 @@
 
 public class Main {
     public static void main(String[] args) {
+        boolean found = false;
+
         for (int tens = 1; tens <= 9; tens++) {
             for (int ones = 0; ones <= 9; ones++) {
 
@@ -9,11 +11,14 @@ public class Main {
 
                 if (ones == 2 * tens &&
                     reversed - original == 36) {
-                    System.out.println(
-                        "The number is: " + original
-                    );
+                    System.out.println("The number is: " + original);
+                    found = true;
                 }
             }
+        }
+
+        if (!found) {
+            System.out.println("No such number exists.");
         }
     }
 }
